@@ -14,7 +14,7 @@ const ProductPage = () => {
       });
     dispatch(setProducts(response.data));
   };
-  useEffect(() => {fetchProducts();},[]);
+  useEffect(() => {fetchProducts();});
   return (
     <div className="ui grid container center" >
       <ProductComponent />
