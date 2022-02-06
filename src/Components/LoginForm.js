@@ -13,6 +13,7 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const errors=validate(formValues);
+    console.log(errors);
     if (Object.keys(errors).length === 0) {
     localStorage.setItem('user',JSON.stringify(formValues))
     navigate('/dashboard');
