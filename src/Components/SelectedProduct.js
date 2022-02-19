@@ -1,6 +1,6 @@
 import React, { useEffect} from "react";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { selectedProduct } from "../redux/actions/productActions";
 import ProductComponent2 from "./ProductComponent2";
 
@@ -11,7 +11,7 @@ const SelectedProduct = () => {
     const dispatch = useDispatch();
     const fetchProducts = async () => {
     const response = await axios
-      .get(`https://api.spoonacular.com/food/ingredients/search?query=${query}&number=${number}&intolerances=${intolerance}&apiKey=72c1f614304941ff8567b8d860bda7aa`)
+      .get(`${process.env.REACT_APP_SELECTED_PRODUCTS_API_URL}?query=${query}&number=${number}&intolerances=${intolerance}&apiKey=${process.env.REACT_APP_PRODUCTS_API_KEY}`)
       .catch((err) => {
         console.log("Err: ", err);
       });

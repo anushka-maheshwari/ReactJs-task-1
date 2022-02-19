@@ -7,13 +7,13 @@ function Dashboard()
     const [number,setNumber]=useState(0);
     const [intolerance,setIntolerance]=useState([]);
     let navigate=useNavigate();
-    function clickHandler()
+    function onSubmit()
     {
         localStorage.setItem('query',query);
         localStorage.setItem('number',number);
         localStorage.setItem('intolerance',intolerance);
     }
-    function clickHandler2()
+    function onLogout()
     {
         localStorage.setItem('query','');
         localStorage.setItem('number',0);
@@ -29,7 +29,7 @@ function Dashboard()
     return(
     <div >
       <div className=" grid container ">
-          <button  onClick={clickHandler2} className="fluid ui button blue">Logout</button>
+          <button  onClick={onLogout} className="fluid ui button blue">Logout</button>
       </div>
       <div className="grid container ">
           <h2>Ingredient Search</h2>
@@ -44,7 +44,7 @@ function Dashboard()
         <form>
         <div className="ui divider"></div>
         <div className="ui form">
-          <div className="field">s
+          <div className="field">
             <input type="text" placeholder='query' onChange={(e)=>{setQuery(e.target.value)}} required/>
           </div>
           <div className="field">
@@ -60,7 +60,7 @@ function Dashboard()
           <div><input type="checkbox" className="control-input" id="Sulfite" value="Sulfite"  onChange={handleCheckboxChange}/>Sulfite</div>
           </div>
           <div className="field">
-          <button onClick={clickHandler} className="fluid ui button blue">Get Details</button>
+          <button onClick={onSubmit} className="fluid ui button blue">Get Details</button>
           </div>
         </div>
       </form>

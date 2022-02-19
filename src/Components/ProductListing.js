@@ -8,7 +8,7 @@ const ProductPage = () => {
   const dispatch = useDispatch();
   const fetchProducts = async () => {
     const response = await axios
-      .get("https://api.spoonacular.com/recipes/random?apiKey=72c1f614304941ff8567b8d860bda7aa")
+      .get(`${process.env.REACT_APP_RANDOM_PRODUCTS_API_URL}?apiKey=${process.env.REACT_APP_PRODUCTS_API_KEY}`)
       .catch((err) => {
         console.log("Err: ", err);
       });

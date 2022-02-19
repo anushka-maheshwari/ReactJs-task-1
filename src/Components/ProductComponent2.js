@@ -4,10 +4,10 @@ import Dashboard from "./Dashboard";
 
 const ProductComponent2 = () => {
   const products = useSelector((state) => state.product.products);
-  if(products!==undefined){
+  if(products){
     const renderList = products.results.map((product) => {
-    const id=product.id;
-    const  name  = product.name;
+    const {id,name}=product;
+
     return (
       <div className="four wide column" key={id} >
           <div className="ui link cards">

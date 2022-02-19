@@ -8,7 +8,7 @@ const ProductComponent = () => {
   {
       alert("Please Login First");
   }
-  if(products.recipes!=undefined)
+  if(products.recipes)
   {
     const  title  = products.recipes[0].title;
     const image=products.recipes[0].image;
